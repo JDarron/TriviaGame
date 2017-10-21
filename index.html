@@ -3,21 +3,40 @@
 <head>
 	<title>Totes Trivs Yo!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css"><script
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script
 		src="https://code.jquery.com/jquery-3.2.1.js"
 		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 		crossorigin="anonymous"></script>	
 </head>
 <body>
+<!-- ================ START JUMBOTRON ======================== -->	
+
 <div class="jumbotron text-center color">
 	<h1>
 		Totes Toon Trivia!
 	</h1>
+	
 	<button id = "submit">Start!</button>
-</div>
+
+<!-- ================ START TIMER ======================== -->		
+	<div id="timer-content">
+		<h3>
+			Time Left
+		</h3>
+		<div id="timer">
+			
+		</div>
+	</div>
+<!-- ================ END TIMER ======================== -->	
+
+</div> <!-- JUMBO CLOSING DIV -->
+
+<!-- ================ END JUMBOTRON ======================== -->
 <!-- ================ START CONTENT ======================== -->
-<div class="container">
-	<div class="row" id="content-div">
+
+<div class="container" id="content">
+	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -25,10 +44,10 @@
 						1) What kind of pet does Spongebob have?
 					</p>
 					<form id = "q1">
-						<input type="radio" name="quiz-answers" value="a"> a) Squirrel<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Sea Snail<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Worm<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Jelly Fish
+						<input type="radio" name="question1" value="a"> a) Squirrel<br>
+						<input type="radio" name="question1" value="b"> b) Sea Snail<br>
+						<input type="radio" name="question1" value="c"> c) Worm<br>
+						<input type="radio" name="question1" value="d"> d) Jelly Fish
 					</form>
 				</div>
 			</div>
@@ -40,10 +59,10 @@
 						2) What is the name of Wanda's husband in Fairly Odd Parents?
 					</p>
 					<form >
-						<input type="radio" name="quiz-answers" value="a"> a) Vicky<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Denzel Crocker<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Mr. Turner<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Cosmo  
+						<input type="radio" name="question2" value="a"> a) Vicky<br>
+						<input type="radio" name="question2" value="b"> b) Denzel Crocker<br>
+						<input type="radio" name="question2" value="c"> c) Mr. Turner<br>
+						<input type="radio" name="question2" value="d"> d) Cosmo  
 					</form> 
 				</div>
 			</div>
@@ -57,10 +76,10 @@
 						3) In Jimmy Neutron, who is the alien king?
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Goobot V<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Ooblar<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Yokians<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Grish  
+						<input type="radio" name="question3" value="a"> a) Goobot V<br>
+						<input type="radio" name="question3" value="b"> b) Ooblar<br>
+						<input type="radio" name="question3" value="c"> c) Yokians<br>
+						<input type="radio" name="question3" value="d"> d) Grish  
 					</form> 
 				</div>
 			</div>
@@ -72,10 +91,10 @@
 						4) In Hey Arnold! who has a shrine of Arnold?
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Gerald<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Gertrude<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Helga<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Stella   
+						<input type="radio" name="question4" value="a"> a) Gerald<br>
+						<input type="radio" name="question4" value="b"> b) Gertrude<br>
+						<input type="radio" name="question4" value="c"> c) Helga<br>
+						<input type="radio" name="question4" value="d"> d) Stella   
 					</form> 
 				</div>
 			</div>
@@ -89,10 +108,10 @@
 						5) What is Ed, Edd n Eddy's favorite thing to eat?
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Gummy Worms<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Spinach<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Cupcakes<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Jawbreakers  
+						<input type="radio" name="question5" value="a"> a) Gummy Worms<br>
+						<input type="radio" name="question5" value="b"> b) Spinach<br>
+						<input type="radio" name="question5" value="c"> c) Cupcakes<br>
+						<input type="radio" name="question5" value="d"> d) Jawbreakers  
 					</form> 
 				</div>
 			</div>
@@ -104,10 +123,10 @@
 						6) In Recess, who is the leader of the group?
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Ashley<br>
-						<input type="radio" name="quiz-answers" value="b"> b) T.J.<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Vince<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Gretchen
+						<input type="radio" name="question6" value="a"> a) Ashley<br>
+						<input type="radio" name="question6" value="b"> b) T.J.<br>
+						<input type="radio" name="question6" value="c"> c) Vince<br>
+						<input type="radio" name="question6" value="d"> d) Gretchen
 					</form> 
 				</div>
 			</div>
@@ -121,10 +140,10 @@
 						7) Where is Dexter's Laboratory located? 
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Behind his book case<br>
-						<input type="radio" name="quiz-answers" value="b"> b) In his locker<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Under the couch<br>
-						<input type="radio" name="quiz-answers" value="d"> d) In his backyard   
+						<input type="radio" name="question7" value="a"> a) Behind his book case<br>
+						<input type="radio" name="question7" value="b"> b) In his locker<br>
+						<input type="radio" name="question7" value="c"> c) Under the couch<br>
+						<input type="radio" name="question7" value="d"> d) In his backyard   
 					</form> 
 				</div>
 			</div>
@@ -136,18 +155,48 @@
 						8) In Scoobie-Doo, what is the gangs name? 
 					</p>
 					<form>
-						<input type="radio" name="quiz-answers" value="a"> a) Mystery Shack<br>
-						<input type="radio" name="quiz-answers" value="b"> b) Ghost Busters<br>
-						<input type="radio" name="quiz-answers" value="c"> c) Doom Patrol<br>
-						<input type="radio" name="quiz-answers" value="d"> d) Mystery Inc.
+						<input type="radio" name="question8" value="a"> a) Mystery Shack<br>
+						<input type="radio" name="question8" value="b"> b) Ghost Busters<br>
+						<input type="radio" name="question8" value="c"> c) Doom Patrol<br>
+						<input type="radio" name="question8" value="d"> d) Mystery Inc.
 					</form> 
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- ================ END CONTENT ======================== -->
+<!-- ================ START SCORE ======================== -->
+
+<div class="container" id="score">
+	<div class="row">
+		<div class="col-md-6 text-center">		
+			<div class="panel panel-default">
+				<div class="panel-heading" >
+					Correct
+				</div>
+				<div class="panel-body" id="correct-answers">
+					<!-- CORRECT VARIABLE GOES HERE -->
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 text-center">		
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Incorrect
+				</div>
+				<div class="panel-body" id="incorrect-answers">
+					<!-- INCORRECT VARIABLE GOES HERE -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ================ END SCORE ======================== -->
 <!-- ================== SCRIPTS ==================== -->
+
 <script src="assets/javascript/app.js"></script>
 </body>
 </html>

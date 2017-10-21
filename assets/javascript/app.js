@@ -1,63 +1,113 @@
 $(document).ready(function() {
     // ================= VARIABLES =========================
 
-    // CORRECT 
+    // CORRECT
+    var correct = 0;
     // INCORRECT
-
-    // CORECTANSWER = { QUESTION1: 'B', QUESTION2: 'D', QUESTION3: 'A', QUESTION4: 'C', QUESTION5: 'D', QUESTION6: 'B', QUESTION7: 'A', QUESTION8: 'D' }
+    var incorrect = 0;
+    // NUMBER OF QUESTIONS IN THE QUIZ
+    var numQuestions = 8;
+    // CORRECT ANSWERS
+    var correctAnswer = ["b", "d", "a", "c", "d", "b", "a", "d"];
+    // GRABBING THE DIVS TO DISAPEAR AND REAPPEAR
+    var content = document.getElementById("content");
+    var button = document.getElementById("submit");
+    var score = document.getElementById("score");
+    var timerContent = document.getElementById("timer-content");
+    // TIMER SECONDS TO COUNT DOWN
+    var timerSeconds = 45;
 
     // ================= FUNCTIONS =========================
 
-    // FUNCTION HIDECONTENT 
-    // STYLE DISPLAY NONE
+    // FUNCTION HIDECONTENT
+    function hideContent() {
+        // STYLE DISPLAY NONE
+        content.style.display = "none";
+        // STYLE DISPLAY NONE TIMER
+        timerContent.style.display = "none";
+    };
 
-    // FUNCTION SHOWCONTENT 
-    // STYLE DISPLAY BLOCK
-    // STYLE DISPLAY NONE START BUTTON
+    // FUNCTION HIDE SCORE
+    function hideScore() {
+        score.style.display = "none";
+        // STYLE DISPLAY NONE TIMER
+        timerContent.display = "none";
+    };
+
+    // FUNCTION SHOWCONTENT
+    function showContent() {
+        // STYLE DISPLAY BLOCK
+        content.style.display = "block";
+        // STYLE DISPLAY NONE START BUTTON
+        button.style.display = "none";
+        // STYLE DISPLAY BLOCK TIMER
+        timerContent.style.display = "bLock";
+        // SHOW TIMER CONTENT
+        $("#timer").text(timerSeconds);
+    };
 
     // FUNCTION TIMEUP
-    //STYLE.DISPLAY NONE CONTENT
-    //STYLE.DISPLAY NONE BUTTON				
-    // GET USER INPUT VALUES 
-    // LOOP THROUGH  
-    // GET INPUT VALUE
-    // IF INPUT VALUE === CORRECTANSWER.QUESTION + I
-    // CORRECT++ 
-    // ELSE 
-    // INCORRECT++
+    function timeUp() {
+        console.log("We in this b****!")
+        // CALL HIDECONTENT     	
+        hideContent();
+        // LOOP THROUGH THE QUESTIONS & COMPARE     	
+        for (var i = 0; i < numQuestions; i++) {
+            // GET USER INPUT VALUES 		
+            var returnValue = $('input[name=question' + (i + 1) + ']:checked').val();
+            // IF ANSWER IS CORRECT    	
+            if (returnValue === correctAnswer[i]) {
+                // CORRECT++ 
+                correct++;
+                console.log("Question " + (i + 1) + ": True - " + correct);
+            } else { // ELSE ANSWER IS INCORRECT 
+                // INCORRECT++
+                incorrect++;
+                console.log(incorrect);
+                console.log("Question " + (i + 1) + ": False - " + incorrect);
+            }
+        };
+        // CALL SHOW SCORE
+        showScore();
+        // CLEAR INTERVAL
+        clearInterval(timer);
+    }; // END TIMEUP FUNCTION
 
-    // FUNCITON TIMER
-    // SHOW TIME LEFT 
+    // FUNCTION SHOW SCORE
+    function showScore() {
+        //STYLE DISPLAY BLOCK
+        score.style.display = "block";
+        // STYLE DISPLAY NONE
+        content.style.display = "none";
+        // ADD THE CORRECT ANSWERS TO THE PAGE
+        $("#correct-answers").text(correct);
+        // ADD THE INCORRECT ANSWERS TO THE PAGE
+        $("#incorrect-answers").text(incorrect);
 
+    };
 
-
-    // END GAME WHEN TIME RUNS OUT
-    // TIME RUN OUT HIDE QUESTIONS AND SHOW SCORE
-
-
-    // REVEAL NUMBER OF QUESTIONS RIGHT AND WRONG 
-    // SHOW CORRECT ANSWERS
-    // SHOW INCORRECT ANSWERS
-
+    // FUNCTION TIMER 
+    function timer() {
+        timerSeconds--;
+        $("#timer").text(timerSeconds);
+    };
 
     // ----------------- CALL FUNCTIONS ON START -----------
 
-    // CALL HIDECONTENT 
+    // CALL HIDECONTENT
+    hideContent();
+    // CALL HIDESCORE
+    hideScore();
 
     // ================= ONCLICKS ==========================
 
-    // .ON CLICK DO THIS 
-    // CALL SHOW CONTENT
-    // CALL TIMOUT (TIMEUP)
-
-
-    //console.log( document.forms[0].elements[1].value );
-
-    console.log($('input[name=radioName]:checked', '#q1').val());
-
-
     $("#submit").on("click", function(e) {
-        e.preventDefault();
-        console.log($('input[name=quiz-answers]:checked', '#q1').val());
-    })
+        // CALL SHOW CONTENT
+        showContent();
+        // CALL FUNCTION TIMER
+        setInterval(timer, 1000);
+        // CALL TIMOUT (TIMEUP)
+        setTimeout(timeUp, 45000);
+    });
+
 });
