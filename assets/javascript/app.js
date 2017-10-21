@@ -1,62 +1,63 @@
 $(document).ready(function() {
-// ================= VARIABLES =========================
-	// MAKE VARIABLES
-		// WRONG 
-		// RIGHT 
+    // ================= VARIABLES =========================
 
-	// MAKE OBJECT 
-		// GAME
-			// GAME ONE  
-				// FIVE QUESTIONS 
-				// FIVE ANSWERS
-			// GAME TWO 
-				// FIVE QUESTIONS 
-				// FIVE ANSWERS
+    // CORRECT 
+    // INCORRECT
+
+    // CORECTANSWER = { QUESTION1: 'B', QUESTION2: 'D', QUESTION3: 'A', QUESTION4: 'C', QUESTION5: 'D', QUESTION6: 'B', QUESTION7: 'A', QUESTION8: 'D' }
+
+    // ================= FUNCTIONS =========================
+
+    // FUNCTION HIDECONTENT 
+    // STYLE DISPLAY NONE
+
+    // FUNCTION SHOWCONTENT 
+    // STYLE DISPLAY BLOCK
+    // STYLE DISPLAY NONE START BUTTON
+
+    // FUNCTION TIMEUP
+    //STYLE.DISPLAY NONE CONTENT
+    //STYLE.DISPLAY NONE BUTTON				
+    // GET USER INPUT VALUES 
+    // LOOP THROUGH  
+    // GET INPUT VALUE
+    // IF INPUT VALUE === CORRECTANSWER.QUESTION + I
+    // CORRECT++ 
+    // ELSE 
+    // INCORRECT++
+
+    // FUNCITON TIMER
+    // SHOW TIME LEFT 
 
 
 
+    // END GAME WHEN TIME RUNS OUT
+    // TIME RUN OUT HIDE QUESTIONS AND SHOW SCORE
 
 
-// ================= FUNCTIONS =========================
+    // REVEAL NUMBER OF QUESTIONS RIGHT AND WRONG 
+    // SHOW CORRECT ANSWERS
+    // SHOW INCORRECT ANSWERS
 
-	// SHOW ONLY ONE QUESTION UNTIL THE PLAYER ANSWERS IT OR TIME RUNS OUT. 
-		// FUNCTION QUESTIONDISPLAY
 
-	// WHEN CORRECT ANSWER CHOSEN, CONGRATULATE THEM ++RIGHT; DISPLAY NEXT QUESTION
-		// FUNCTION CORRECTANSWER 
+    // ----------------- CALL FUNCTIONS ON START -----------
 
-	// WHEN WRONG ANSWER CHOSEN, SCORN THEM; ++WRONG; DISPLAY NEXT QUESTION
-		// FUNCTION WRONGANSWER 
+    // CALL HIDECONTENT 
 
-	// WHEN TIME RUNS OUT, TELL PLAYER THAT TIME'S UP; DISPLAY CORRECT ANSWER; WAIT A FEW SECONDS, SHOW THE NEXT QUESTION;
-		// FUNCITON TIMESUPRIGHT
+    // ================= ONCLICKS ==========================
 
-	// IF PLAYER CHOOSES WRONG TELL PLAYER, WRONG OPTION; DISPLAY CORRECT ANSWER; WAIT A FEW SECONDS; SHOW NEXT QUESTION
-		// FUNCTION TIMESUPWRONG
+    // .ON CLICK DO THIS 
+    // CALL SHOW CONTENT
+    // CALL TIMOUT (TIMEUP)
 
-	// LAST SCREEN, SHOW NUMBER CORRECT ANSWERS; INCORRECT ANSWERS; 
-		// FUNCTION SHOWANSWERS
 
-	// ADD OPTION TO RESTART WITHOUT RESTARTING THE PAGE;
- 		// FUNCTION RESTART
+    //console.log( document.forms[0].elements[1].value );
 
-// ================= ONCLICKS ==========================
+    console.log($('input[name=radioName]:checked', '#q1').val());
 
+
+    $("#submit").on("click", function(e) {
+        e.preventDefault();
+        console.log($('input[name=quiz-answers]:checked', '#q1').val());
+    })
 });
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
