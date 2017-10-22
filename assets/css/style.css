@@ -1,4 +1,10 @@
+body {
+	background-image: url("../images/cartoon_network.jpg");
+	background-position: 0 247px; 
+}
+
 button { /* Green */
+	color: #2C2C2C;
 	background-color: #ffffff;
     border: none;
     padding: 15px 32px;
@@ -8,4 +14,11 @@ button { /* Green */
     font-size: 16px;
 }
 
+.color {
+	color: #ffffff;
+	background-color: #38AE00;
+}
 
+.question-box {
+	background-color: #blue;
+}

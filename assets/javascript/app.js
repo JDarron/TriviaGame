@@ -59,12 +59,9 @@ $(document).ready(function() {
             if (returnValue === correctAnswer[i]) {
                 // CORRECT++ 
                 correct++;
-                console.log("Question " + (i + 1) + ": True - " + correct);
             } else { // ELSE ANSWER IS INCORRECT 
                 // INCORRECT++
                 incorrect++;
-                console.log(incorrect);
-                console.log("Question " + (i + 1) + ": False - " + incorrect);
             }
         };
         // CALL SHOW SCORE
